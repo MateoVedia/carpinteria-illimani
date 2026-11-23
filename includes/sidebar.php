@@ -8,7 +8,7 @@ function isActive($page, $currentPage, $currentDir) {
 ?>
 <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
-        <!-- RUTA CORREGIDA Y FUNCIONAL -->
+        <!-- RUTA DEL LOGO -->
         <img src="<?= getBaseUrl() ?>modules/uploads/logo.png" alt="Logo" style="max-height: 70px; margin-bottom: 10px;" onerror="this.style.display='none'; document.getElementById('fallback-sidebar').style.display='block';">
         <div id="fallback-sidebar" style="display: none; font-size: 40px; margin-bottom: 10px;">🪵</div>
         
@@ -36,11 +36,18 @@ function isActive($page, $currentPage, $currentDir) {
         <li><a href="<?= getBaseUrl() ?>modules/reportes/index.php" class="<?= isActive('reportes', $currentPage, $currentDir) ?>">
             <span class="menu-icon">📈</span> Reportes
         </a></li>
+        
         <?php if ($_SESSION['rol'] === 'admin'): ?>
         <li><a href="<?= getBaseUrl() ?>modules/usuarios/index.php" class="<?= isActive('usuarios', $currentPage, $currentDir) ?>">
             <span class="menu-icon">⚙️</span> Usuarios
         </a></li>
         <?php endif; ?>
+
+        <!-- NUEVO ENLACE AÑADIDO AQUÍ: SOPORTE Y ACTUALIZACIONES -->
+        <li><a href="<?= getBaseUrl() ?>modules/soporte/index.php" class="<?= isActive('soporte', $currentPage, $currentDir) ?>">
+            <span class="menu-icon">🛠️</span> Soporte y Actualizaciones
+        </a></li>
+
         <li><a href="<?= getBaseUrl() ?>logout.php">
             <span class="menu-icon">🚪</span> Cerrar Sesión
         </a></li>
