@@ -1,2 +1,6 @@
-def saludar(nombre_completo): return f"Hola {nombre_completo}" 
-print(saludar("GitHub")) 
+def saludar(nombre_completo):
+    if not nombre_completo:
+        return "Error: El nombre no puede estar vacío"
+    return f"Hola {nombre_completo}"
+
+print(saludar("GitHub"))
